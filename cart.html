@@ -1,0 +1,25 @@
+<div class = "container mt-4">
+    @if (product && !orderConfirmation) {
+        <h3> Review your order </h3>
+        <div class = "card mb-4">
+            <div class = "row g-0">
+                <div class = "col-md-4">
+                    <img src = "http://localhost:3000/images/{{ product.image }}" class = "img-fluid rounded-start" alt = "front-end\src\app\images">
+                </div>
+                <div class = "col-md-8">
+                    <div class = "card-body">
+                        <h5 class = "card-tittle">{{product.name}}</h5>
+                        <p class = "card-text">{{product.description}}</p>
+                        <p class = "card-text">{{product.price}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class = "btn btn-success btn-lg" (click) = "submitOrder()"> Confirm Order </button>
+    }
+    @else {
+        <div class = "aler aler-warning mt-4">
+            <p> Your cart is empty. Plese add some products to your cart from <a routerLink="/">Available Products</a>.</p>
+        </div>
+    }
+</div>
